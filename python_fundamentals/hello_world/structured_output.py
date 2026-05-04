@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-print("Language: Python")
-print("Version: 3")
-print("Pi approx: 3.14")
-print("Computation valid: True")
+x = 0
+if x == 0:
+    print("Language: Python")
+    print("Version: 3")
+    print("Pi approx: 3.14")
+    print("Computation valid: True")
+
