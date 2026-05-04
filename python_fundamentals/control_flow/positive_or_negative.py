@@ -3,8 +3,8 @@ number = __import__('random').randint(-10, 10)
 if number > 0:
     print(number, "is positive")
 
-if number == 0:
+elif number == 0:
     print(number, "is zero")
 
-if number < 0:
+else:
     print(number, "is negative")
