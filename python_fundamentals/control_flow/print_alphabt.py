@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-alphabet = "abcdefghijklmnopqrstuvwxyz"
+alphabet = list(range(97, 123))
 alphabt = ""
 
-for letter in alphabet:
-    if letter != 'e' and letter != 'q':
+for ascii in alphabet:
+    if ascii != 101 and ascii != 113:
+        letter = chr(ascii)
         alphabt += letter
 
 print("{}".format(alphabt), end='\n')
