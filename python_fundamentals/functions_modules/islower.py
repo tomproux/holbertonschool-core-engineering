@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 def islower(c):
-    if c >= ord('a') and c <= ord('z'):
+    alphabet = list(range(ord('a'), ord('z')))
+    if c in alphabet:
+        c = chr(c)
         return True
     else:
         return False
