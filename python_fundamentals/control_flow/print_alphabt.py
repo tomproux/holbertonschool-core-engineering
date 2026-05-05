@@ -7,4 +7,4 @@ for ascii in alphabet:
         letter = chr(ascii)
         alphabt += letter
 
-print("{}".format(alphabt), end='\n')
+print("{}".format(alphabt), end="")
