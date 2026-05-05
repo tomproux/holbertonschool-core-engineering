@@ -1,2 +1,9 @@
 #!/usr/bin/env python3
-print("".join(c for c in "abcdefghijklmnopqrstuvwxyz" if c not in "qe"))
+alphabet = "abcdefghijklmnopqrstuvwxyz"
+alphabt = ""
+
+for letter in alphabet:
+    if letter != 'e' and letter != 'q':
+        alphabt += letter
+
+print(alphabt)
