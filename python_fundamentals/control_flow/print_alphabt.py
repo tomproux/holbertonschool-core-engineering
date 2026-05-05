@@ -10,3 +10,4 @@ print("{}".format(alphabt), end='\n')'''
 for lettre in range(ord('a'), ord('z') + 1):
     if chr(lettre) != 'e' and chr(lettre) != 'q':
         print("{}".format(chr(lettre)), end="")
+print()
