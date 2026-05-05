@@ -2,4 +2,4 @@
 numbers = list(range(0, 99))
 for i in numbers:
     hexa = hex(i)
-    print("{} = {}".format(i, hexa), end="")
+    print("{} = {}".format(i, hexa))
