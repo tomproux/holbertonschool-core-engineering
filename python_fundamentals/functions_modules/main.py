@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-from functions_modules.islower import islower
+from islower import islower
 
-islower('a')
-islower('A')
-islower('3')
+print(islower('a'))
+print(islower('A'))
+print(islower('3'))
