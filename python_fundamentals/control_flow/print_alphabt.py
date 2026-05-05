@@ -6,4 +6,4 @@ for letter in alphabet:
     if letter != 'e' and letter != 'q':
         alphabt += letter
 
-print(alphabt)
+print("{}".format(alphabt))
