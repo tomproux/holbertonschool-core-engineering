@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from print_last_digit import print_last_digit
+from pow import pow
 
-print_last_digit(98)
-print_last_digit(-1024)
+pow(2, 4)
+pow(5, 0)
