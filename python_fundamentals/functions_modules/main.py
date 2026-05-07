@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-from pow import pow
+from add_0 import add
 
-print(pow(2, 4))
-print(pow(5, 0))
+if __name__ == "__main__":
+    a = 1
+    b = 2
+    result = add(a, b)
+    print(f"{a} + {b} = {result}")
