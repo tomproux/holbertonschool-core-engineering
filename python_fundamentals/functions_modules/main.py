@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
 from pow import pow
 
-pow(2, 4)
-pow(5, 0)
+print(pow(2, 4))
+print(pow(5, 0))
