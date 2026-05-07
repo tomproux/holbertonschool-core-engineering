@@ -1,6 +1,4 @@
 #!/usr/bin/env python3
-from islower import islower
+from uppercase import uppercase
 
-print(islower('a'))
-print(islower('A'))
-print(islower('3'))
+print(uppercase('Holberton'))
