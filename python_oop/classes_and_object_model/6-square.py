@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Square module with position, size validation, and print behavior."""
+"""Square module with size, position, printing, and string behavior."""
 
 
 class Square:
-    """Defines a square with size, position, and printing behavior."""
+    """Defines a square with size and position."""
 
     def __init__(self, size=0, position=(0, 0)):
         """Initialize a Square instance."""
@@ -17,7 +17,7 @@ class Square:
 
     @size.setter
     def size(self, value):
-        """Set the size with validation."""
+        """Set size with validation."""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
@@ -26,24 +26,24 @@ class Square:
 
     @property
     def position(self):
-        """Get the position of the square."""
+        """Get position of the square."""
         return self.__position
 
     @position.setter
     def position(self, value):
         """
-        Set the position of the square.
+        Set position with validation.
 
         Args:
-            value (tuple): (x, y) position of the square.
+            value (tuple): (x, y) position
 
         Raises:
-            TypeError: If value is not a tuple of 2 positive integers.
+            TypeError: If invalid format
         """
         if (
             not isinstance(value, tuple)
             or len(value) != 2
-            or not all(isinstance(i, int) and i >= 0 for i in value)
+            or not all(isinstance(n, int) and n >= 0 for n in value)
         ):
             raise TypeError(
                 "position must be a tuple of 2 positive integer"
@@ -51,11 +51,11 @@ class Square:
         self.__position = value
 
     def area(self):
-        """Return the area of the square."""
+        """Return square area."""
         return self.__size ** 2
 
     def my_print(self):
-        """Print the square using # considering position offsets."""
+        """Print square using '#' with position offsets."""
         if self.__size == 0:
             print("")
             return
@@ -69,8 +69,8 @@ class Square:
         if self.__size == 0:
             return ""
 
-        lines = ["\n" * self.__position[1]]
+        result = "\n" * self.__position[1]
         for _ in range(self.__size):
-            lines.append(" " * self.__position[0] + "#" * self.__size)
+            result += " " * self.__position[0] + "#" * self.__size + "\n"
 
-        return "\n".join(lines)
+        return result.rstrip()
