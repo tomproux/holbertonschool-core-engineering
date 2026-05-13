@@ -2,7 +2,8 @@
 def pow(a, b):
     result = 1
 
-    for _ in range(b):
+    while b > 0:
         result *= a
+        b -= 1
 
     return result
