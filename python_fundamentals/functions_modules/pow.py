@@ -11,4 +11,4 @@ def pow(a, b):
             result /= a
             b += 1
 
-    return result
+    return float(result)
