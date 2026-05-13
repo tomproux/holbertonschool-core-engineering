@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Square module with size, position, and printable representation."""
+"""Module that defines a Square class with size and position."""
 
 
 class Square:
-    """Defines a square with size and position."""
+    """Class that defines a square with size and position."""
 
     def __init__(self, size=0, position=(0, 0)):
         """Initialize a Square instance."""
@@ -12,7 +12,7 @@ class Square:
 
     @property
     def size(self):
-        """Get the size of the square."""
+        """Get size."""
         return self.__size
 
     @size.setter
@@ -26,22 +26,28 @@ class Square:
 
     @property
     def position(self):
-        """Get the position of the square."""
+        """Get position."""
         return self.__position
 
     @position.setter
     def position(self, value):
-        """Set position of the square."""
+        """Set position with validation."""
         if (
             not isinstance(value, tuple)
             or len(value) != 2
             or not all(isinstance(i, int) and i > 0 for i in value)
         ):
-            raise TypeError("position must be a tuple of 2 positive integer")
+            raise TypeError(
+                "position must be a tuple of 2 positive integer"
+            )
         self.__position = value
 
+    def area(self):
+        """Return square area."""
+        return self.__size ** 2
+
     def my_print(self):
-        """Print the square using '#' considering position offsets."""
+        """Print square with '#' respecting position."""
         if self.__size == 0:
             print("")
             return
@@ -55,8 +61,8 @@ class Square:
         if self.__size == 0:
             return ""
 
-        output = "\n" * self.__position[1]
+        result = "\n" * self.__position[1]
         for _ in range(self.__size):
-            output += " " * self.__position[0] + "#" * self.__size + "\n"
+            result += " " * self.__position[0] + "#" * self.__size + "\n"
 
-        return output.rstrip()
+        return result.rstrip()
