@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 def pow(a, b):
-    result = 1.0
+    result = 1
 
-    if b >= 0:
-        for _ in range(b):
+    if b > 0:
+        while b > 0:
             result *= a
+            b -= 1
     else:
-        for _ in range(-b):
-            result *= 1 / a
+        while b < 0:
+            result /= a
+            b += 1
 
     return result
