@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 def safe_print_list_integers(my_list=[], x=0):
     count = 0
+    i = 0
 
-    for i in range(x):
+    while i < x:
         try:
             value = my_list[i]
         except IndexError:
@@ -13,6 +14,8 @@ def safe_print_list_integers(my_list=[], x=0):
             count += 1
         except (TypeError, ValueError):
             pass
+
+        i += 1
 
     print()
     return count
