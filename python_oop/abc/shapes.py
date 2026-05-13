@@ -1,5 +1,7 @@
+#!/usr/bin/env python3
 """
-Shape module using abstract base class and duck typing.
+Module defining abstract Shape class and concrete implementations
+using duck typing.
 """
 
 from abc import ABC, abstractmethod
@@ -7,61 +9,58 @@ import math
 
 
 class Shape(ABC):
-    """Abstract shape class."""
+    """Abstract base class for geometric shapes."""
 
     @abstractmethod
     def area(self):
-        """Return area of shape."""
+        """Return the area of the shape."""
         pass
 
     @abstractmethod
     def perimeter(self):
-        """Return perimeter of shape."""
+        """Return the perimeter of the shape."""
         pass
 
 
 class Circle(Shape):
-    """Circle shape."""
+    """Circle shape implementation."""
 
     def __init__(self, radius):
-        """Initialize circle."""
+        """Initialize a circle with a radius."""
         self.radius = radius
 
     def area(self):
-        """Compute area."""
+        """Compute area of circle."""
         return math.pi * self.radius ** 2
 
     def perimeter(self):
-        """Compute perimeter."""
+        """Compute perimeter (circumference) of circle."""
         return 2 * math.pi * self.radius
 
 
 class Rectangle(Shape):
-    """Rectangle shape."""
+    """Rectangle shape implementation."""
 
     def __init__(self, width, height):
-        """Initialize rectangle."""
+        """Initialize rectangle with width and height."""
         self.width = width
         self.height = height
 
     def area(self):
-        """Compute area."""
+        """Compute area of rectangle."""
         return self.width * self.height
 
     def perimeter(self):
-        """Compute perimeter."""
+        """Compute perimeter of rectangle."""
         return 2 * (self.width + self.height)
 
 
 def shape_info(shape):
-    """Print shape area and perimeter using duck typing."""
-    print(shape.area())
-    print(shape.perimeter())
+    """
+    Print area and perimeter of a shape using duck typing.
 
-
-if __name__ == "__main__":
-    c = Circle(5)
-    r = Rectangle(4, 6)
-
-    shape_info(c)
-    shape_info(r)
+    Args:
+        shape: object with area() and perimeter() methods
+    """
+    print(f"Area: {shape.area()}")
+    print(f"Perimeter: {shape.perimeter()}")
