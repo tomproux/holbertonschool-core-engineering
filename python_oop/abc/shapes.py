@@ -1,7 +1,9 @@
-#!/usr/bin/env python3
 """
-Module defining an abstract Shape class and concrete implementations
-using duck typing.
+Module defining Shape hierarchy with duck typing demonstration.
+
+Implements an abstract Shape class and concrete Circle and Rectangle classes.
+Also provides a shape_info function that uses duck typing to display
+area and perimeter of shapes.
 """
 
 from abc import ABC, abstractmethod
@@ -15,28 +17,18 @@ class Shape(ABC):
 
     @abstractmethod
     def area(self):
-        """
-        Calculate the area of the shape.
-
-        Returns:
-            float: The area of the shape.
-        """
+        """Compute the area of the shape."""
         pass
 
     @abstractmethod
     def perimeter(self):
-        """
-        Calculate the perimeter of the shape.
-
-        Returns:
-            float: The perimeter of the shape.
-        """
+        """Compute the perimeter of the shape."""
         pass
 
 
 class Circle(Shape):
     """
-    Class representing a circle.
+    Concrete implementation of a circle shape.
     """
 
     def __init__(self, radius):
@@ -44,32 +36,22 @@ class Circle(Shape):
         Initialize a Circle instance.
 
         Args:
-            radius (float): The radius of the circle.
+            radius (float): Radius of the circle.
         """
         self.radius = radius
 
     def area(self):
-        """
-        Calculate the area of the circle.
-
-        Returns:
-            float: The area of the circle.
-        """
+        """Compute the area of the circle."""
         return math.pi * self.radius ** 2
 
     def perimeter(self):
-        """
-        Calculate the perimeter (circumference) of the circle.
-
-        Returns:
-            float: The perimeter of the circle.
-        """
+        """Compute the circumference of the circle."""
         return 2 * math.pi * self.radius
 
 
 class Rectangle(Shape):
     """
-    Class representing a rectangle.
+    Concrete implementation of a rectangle shape.
     """
 
     def __init__(self, width, height):
@@ -77,34 +59,24 @@ class Rectangle(Shape):
         Initialize a Rectangle instance.
 
         Args:
-            width (float): The width of the rectangle.
-            height (float): The height of the rectangle.
+            width (float): Width of the rectangle.
+            height (float): Height of the rectangle.
         """
         self.width = width
         self.height = height
 
     def area(self):
-        """
-        Calculate the area of the rectangle.
-
-        Returns:
-            float: The area of the rectangle.
-        """
+        """Compute the area of the rectangle."""
         return self.width * self.height
 
     def perimeter(self):
-        """
-        Calculate the perimeter of the rectangle.
-
-        Returns:
-            float: The perimeter of the rectangle.
-        """
+        """Compute the perimeter of the rectangle."""
         return 2 * (self.width + self.height)
 
 
 def shape_info(shape):
     """
-    Print the area and perimeter of a shape using duck typing.
+    Print area and perimeter of a shape using duck typing.
 
     Args:
         shape: An object that implements area() and perimeter().
@@ -114,9 +86,6 @@ def shape_info(shape):
 
 
 if __name__ == "__main__":
-    """
-    Test the shape_info function with different shape objects.
-    """
     circle = Circle(5)
     rectangle = Rectangle(4, 6)
 
