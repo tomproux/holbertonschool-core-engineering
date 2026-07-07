@@ -14,7 +14,7 @@ async def connection_handler(websocket):
             if isinstance(message, str):
                 trimmed_message = message.strip()
                 if trimmed_message:
-                    await websocket.send(f"OK:{trimmed_message}")
+                    await websocket.send("OK:{}".format(trimmed_message))
                 else:
                     await websocket.send("invalid")
             else:
