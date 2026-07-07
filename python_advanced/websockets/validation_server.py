@@ -11,7 +11,7 @@ async def connection_handler(websocket):
     """Validate incoming text messages and respond with a validation status."""
     try:
         async for message in websocket:
-            if isinstance(message, str) and message:
+            if isinstance(message, str) and message.strip():
                 await websocket.send("OK:{}".format(message))
             else:
                 await websocket.send("invalid")
