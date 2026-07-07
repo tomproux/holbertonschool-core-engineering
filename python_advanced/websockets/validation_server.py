@@ -11,8 +11,12 @@ async def connection_handler(websocket):
     """Validate incoming text messages and echo valid ones."""
     try:
         async for message in websocket:
-            if isinstance(message, str) and message.strip():
-                await websocket.send(message)
+            if isinstance(message, str):
+                trimmed_message = message.strip()
+                if trimmed_message:
+                    await websocket.send(trimmed_message)
+                else:
+                    await websocket.send("invalid")
             else:
                 await websocket.send("invalid")
     except ConnectionClosed:
