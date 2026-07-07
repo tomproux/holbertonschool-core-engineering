@@ -12,9 +12,9 @@ async def connection_handler(websocket):
     try:
         async for message in websocket:
             if isinstance(message, str) and message.strip():
-                await websocket.send("OK:{}".format(message))
+                await websocket.send("OK:{}".format(message.strip()))
             else:
-                await websocket.send("invalid")
+                await websocket.send("ERR:EMPTY")
     except ConnectionClosed:
         pass
 
