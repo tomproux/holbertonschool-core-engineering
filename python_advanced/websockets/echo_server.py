@@ -5,7 +5,7 @@ import asyncio
 import websockets
 
 
-async def connection_handler(websocket, path):
+async def connection_handler(websocket):
     """Echo incoming text messages back to the sender."""
     async for message in websocket:
         await websocket.send(message)
