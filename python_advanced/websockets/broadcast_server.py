@@ -6,7 +6,7 @@ import asyncio
 import websockets
 
 
-connected_clients = set()
+connected_clients = list()
 
 
 async def connection_handler(websocket):
